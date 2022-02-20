@@ -10,7 +10,7 @@ import Foundation
 struct NetworkHotelManager {
     
 
-    func fetchCurrentHotel() {
+    func fetchCurrentHotel(success: @escaping (([CurrentHotelsData]) -> Void), failure: @escaping ((Error) -> Void)) {
         let urlString = "https://raw.githubusercontent.com/Sinweaver/HotelsJson/master/hotelsList.json"
 
         let url = URL(string: urlString)
@@ -19,20 +19,25 @@ struct NetworkHotelManager {
             if let data = data {
                 let dataString = String(data: data, encoding: .utf8)
                 print(dataString!)
-            self.parseJSONE(withData: data)
-                
+                do {
+                    let decoder = JSONDecoder()
+                    let hotels = try decoder.decode([CurrentHotelsData].self, from: data)
+                    DispatchQueue.main.async {
+                        success(hotels)
+                    }
+                    
+                } catch let error as NSError {
+                    DispatchQueue.main.async {
+                        failure(error)
+                    }
+                   
+                }
+            }else {
+                DispatchQueue.main.async {
+                    failure(error ?? NSError(domain: "fetchCurrentHotel", code: -1, userInfo: [:]))
+                }
             }
         }
         task.resume()
-    }
-    
-    func parseJSONE(withData data: Data) {
-        let decoder = JSONDecoder()
-        do {
-            try decoder.decode(CurrentHotelsData.self, from: data)
-            
-        } catch let error as NSError {
-            print(error.localizedDescription)
-        }
     }
 }
