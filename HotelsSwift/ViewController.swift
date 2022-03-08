@@ -17,14 +17,20 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        networkHotelManeger.fetchCurrentHotel()
+        networkHotelManeger.fetchCurrentHotel { [weak self]  hotels in
+            guard let self = self else { return }
+            self.hotels = hotels
+            self.mainTableView.reloadData()
+        } failure: { error in
+            print(error.localizedDescription)
+        }
+
         mainTableView.delegate = self
         mainTableView.dataSource = self
         self.view.addSubview(mainTableView)
         mainTableView.translatesAutoresizingMaskIntoConstraints = false
         mainTableView.register(MainTotalCell.self, forCellReuseIdentifier: "MyCell")
         setupMainTableVeiwConstrats()
-
     }
     
     func setupMainTableVeiwConstrats() {

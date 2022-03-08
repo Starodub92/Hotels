@@ -22,8 +22,8 @@ class MainTotalCell: UITableViewCell {
         imageHotelCell.translatesAutoresizingMaskIntoConstraints = false
         self.contentView.addSubview(imageHotelCell)
         setupImageHotelCellConstraint()
-        setupNameHotelCellConstraint()
-        setupAddressHotelCellConstraint()
+//        setupNameHotelCellConstraint() 
+//        setupAddressHotelCellConstraint()
         
         nameHotelCell.translatesAutoresizingMaskIntoConstraints = false
         addressHotelCell.translatesAutoresizingMaskIntoConstraints = false
@@ -47,29 +47,29 @@ class MainTotalCell: UITableViewCell {
         contentView.addConstraints([topImageHotelCell, leftImageHotelCell, heightImageHotelCell, widthImageHotelCell])
     }
     
-    func setupNameHotelCellConstraint(){
-        
-        let topNameHotelCell = NSLayoutConstraint(item: nameHotelCell, attribute: NSLayoutConstraint.Attribute.top, relatedBy: NSLayoutConstraint.Relation.equal, toItem: contentView, attribute: NSLayoutConstraint.Attribute.top, multiplier: 1.0, constant: 5)
-        
-        let leftNameHotelCell = NSLayoutConstraint(item: nameHotelCell, attribute: NSLayoutConstraint.Attribute.left, relatedBy: NSLayoutConstraint.Relation.equal, toItem: imageHotelCell, attribute: NSLayoutConstraint.Attribute.right, multiplier: 1.0, constant: 5)
-        
-        let rightNameHotelCell = NSLayoutConstraint(item: nameHotelCell, attribute: NSLayoutConstraint.Attribute.right, relatedBy: NSLayoutConstraint.Relation.equal, toItem: contentView, attribute: NSLayoutConstraint.Attribute.right, multiplier: 1.0, constant: 5)
-
-        contentView.addConstraints([topNameHotelCell, leftNameHotelCell, rightNameHotelCell])
-    }
+//    func setupNameHotelCellConstraint(){
+//
+//        let topNameHotelCell = NSLayoutConstraint(item: nameHotelCell, attribute: NSLayoutConstraint.Attribute.top, relatedBy: NSLayoutConstraint.Relation.equal, toItem: contentView, attribute: NSLayoutConstraint.Attribute.top, multiplier: 1.0, constant: 5)
+//
+//        let leftNameHotelCell = NSLayoutConstraint(item: nameHotelCell, attribute: NSLayoutConstraint.Attribute.left, relatedBy: NSLayoutConstraint.Relation.equal, toItem: imageHotelCell, attribute: NSLayoutConstraint.Attribute.right, multiplier: 1.0, constant: 5)
+//
+//        let rightNameHotelCell = NSLayoutConstraint(item: nameHotelCell, attribute: NSLayoutConstraint.Attribute.right, relatedBy: NSLayoutConstraint.Relation.equal, toItem: contentView, attribute: NSLayoutConstraint.Attribute.right, multiplier: 1.0, constant: 5)
+//
+//        contentView.addConstraints([topNameHotelCell, leftNameHotelCell, rightNameHotelCell])
+//    }
     
-    func setupAddressHotelCellConstraint(){
-        
-        let topAddressHotelCell = NSLayoutConstraint(item: addressHotelCell, attribute: NSLayoutConstraint.Attribute.top, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nameHotelCell, attribute: NSLayoutConstraint.Attribute.bottom, multiplier: 1.0, constant: 10)
-        
-        let bottomAddressHotelCell = NSLayoutConstraint(item: addressHotelCell, attribute: NSLayoutConstraint.Attribute.bottom, relatedBy: NSLayoutConstraint.Relation.equal, toItem: contentView, attribute: NSLayoutConstraint.Attribute.bottom, multiplier: 1.0, constant: -5)
-        
-        let leftAddressHotelCell = NSLayoutConstraint(item: addressHotelCell, attribute: NSLayoutConstraint.Attribute.left, relatedBy: NSLayoutConstraint.Relation.equal, toItem: imageHotelCell, attribute: NSLayoutConstraint.Attribute.right, multiplier: 1.0, constant: 5)
-
-        let rightAddressHotelCell = NSLayoutConstraint(item: addressHotelCell, attribute: NSLayoutConstraint.Attribute.right, relatedBy: NSLayoutConstraint.Relation.equal, toItem: contentView, attribute: NSLayoutConstraint.Attribute.right, multiplier: 1.0, constant: -5)
- 
-        contentView.addConstraints([topAddressHotelCell, bottomAddressHotelCell, leftAddressHotelCell, rightAddressHotelCell])
-    }
+//    func setupAddressHotelCellConstraint(){
+//
+//        let topAddressHotelCell = NSLayoutConstraint(item: addressHotelCell, attribute: NSLayoutConstraint.Attribute.top, relatedBy: NSLayoutConstraint.Relation.equal, toItem: nameHotelCell, attribute: NSLayoutConstraint.Attribute.bottom, multiplier: 1.0, constant: 10)
+//
+//        let bottomAddressHotelCell = NSLayoutConstraint(item: addressHotelCell, attribute: NSLayoutConstraint.Attribute.bottom, relatedBy: NSLayoutConstraint.Relation.equal, toItem: contentView, attribute: NSLayoutConstraint.Attribute.bottom, multiplier: 1.0, constant: -5)
+//
+//        let leftAddressHotelCell = NSLayoutConstraint(item: addressHotelCell, attribute: NSLayoutConstraint.Attribute.left, relatedBy: NSLayoutConstraint.Relation.equal, toItem: imageHotelCell, attribute: NSLayoutConstraint.Attribute.right, multiplier: 1.0, constant: 5)
+//
+//        let rightAddressHotelCell = NSLayoutConstraint(item: addressHotelCell, attribute: NSLayoutConstraint.Attribute.right, relatedBy: NSLayoutConstraint.Relation.equal, toItem: contentView, attribute: NSLayoutConstraint.Attribute.right, multiplier: 1.0, constant: -5)
+//
+//        contentView.addConstraints([topAddressHotelCell, bottomAddressHotelCell, leftAddressHotelCell, rightAddressHotelCell])
+//    }
     
  
     
