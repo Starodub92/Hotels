@@ -26,7 +26,6 @@ class MainTotalCell: UITableViewCell {
         imageHotelCell.contentMode = .scaleAspectFill
         imageHotelCell.clipsToBounds = true
         imageHotelCell.translatesAutoresizingMaskIntoConstraints = false
-        imageHotelCell.backgroundColor = .red
         self.contentView.addSubview(imageHotelCell)
         
         nameHotelCell.translatesAutoresizingMaskIntoConstraints = false

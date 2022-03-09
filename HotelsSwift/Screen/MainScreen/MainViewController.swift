@@ -7,6 +7,7 @@
 
 import UIKit
 import Foundation
+import Kingfisher
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -32,8 +33,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         mainTableView.translatesAutoresizingMaskIntoConstraints = false
         mainTableView.register(MainTotalCell.self, forCellReuseIdentifier: "MyCell")
         setupMainTableVeiwConstrats()
-    }
-    
+        
+        }
+        
     func setupMainTableVeiwConstrats() {
         
         let topMainTableView = NSLayoutConstraint(item:mainTableView, attribute: NSLayoutConstraint.Attribute.top, relatedBy: NSLayoutConstraint.Relation.equal, toItem: view, attribute: NSLayoutConstraint.Attribute.top, multiplier: 1.0, constant: 0)
@@ -55,10 +57,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
         func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+            
             let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell") as! MainTotalCell
             let hotel = hotels[indexPath.row]
             
-           // cell.imageHotelCell.image = hotel
+            cell.imageHotelCell.loadImage(url: hotel.imageUrl!)
+            cell.imageHotelCell.kf.indicatorType = .activity
             cell.nameHotelCell.text = hotel.name
             cell.addressHotelCell.text = hotel.address
             cell.srarNumber(star: hotel.stars)
@@ -66,7 +70,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             cell.selectionStyle = .none
             
         return cell
-        
+            
     }
 }
+
 

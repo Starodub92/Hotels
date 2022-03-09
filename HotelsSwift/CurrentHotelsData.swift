@@ -6,9 +6,6 @@
 //
 
 import Foundation
-import Alamofire
-import SwiftyJSON
-
 
 struct CurrentHotelsData : Decodable {
     let name: String
@@ -19,10 +16,14 @@ struct CurrentHotelsData : Decodable {
     let description : String
     
     var imageUrl: URL?  {
-        if let urlString = images.first, let url = URL(string: urlString) {
-            return url
-        }
-        return nil
+            
+            let baseURl = "https://raw.githubusercontent.com/Sinweaver/HotelsJson/master/"
+            let nameUrl = images.first
+            let fullNameUrl = baseURl + (nameUrl)!
+            let fileUrl = URL(string: fullNameUrl)
+            
+            return fileUrl
     }
+
 }
 

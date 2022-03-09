@@ -9,8 +9,9 @@ import Foundation
 
 struct NetworkHotelManager {
     
-
     func fetchCurrentHotel(success: @escaping (([CurrentHotelsData]) -> Void), failure: @escaping ((Error) -> Void)) {
+        
+       // let baseURl = "https://raw.githubusercontent.com/Sinweaver/HotelsJson/master/"
         let urlString = "https://raw.githubusercontent.com/Sinweaver/HotelsJson/master/hotelsList.json"
 
         let url = URL(string: urlString)
@@ -30,7 +31,6 @@ struct NetworkHotelManager {
                     DispatchQueue.main.async {
                         failure(error)
                     }
-                   
                 }
             } else {
                 DispatchQueue.main.async {

@@ -10,4 +10,6 @@ target 'HotelsSwift' do
 
 pod 'Cosmos', '~> 23.0'
 
+pod 'Kingfisher', '~> 7.0'
+
 end
