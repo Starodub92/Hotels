@@ -32,7 +32,7 @@ struct NetworkHotelManager {
                     }
                    
                 }
-            }else {
+            } else {
                 DispatchQueue.main.async {
                     failure(error ?? NSError(domain: "fetchCurrentHotel", code: -1, userInfo: [:]))
                 }

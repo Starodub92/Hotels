@@ -61,6 +61,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
            // cell.imageHotelCell.image = hotel
             cell.nameHotelCell.text = hotel.name
             cell.addressHotelCell.text = hotel.address
+            cell.srarNumber(star: hotel.stars)
             
             cell.selectionStyle = .none
             
