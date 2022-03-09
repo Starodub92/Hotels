@@ -10,7 +10,7 @@
 		4675E08D27BEA6460080B063 /* MainTotalCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4675E08C27BEA6460080B063 /* MainTotalCell.swift */; };
 		46BAC96D27BE527700DE8646 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BAC96C27BE527700DE8646 /* AppDelegate.swift */; };
 		46BAC96F27BE527700DE8646 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BAC96E27BE527700DE8646 /* SceneDelegate.swift */; };
-		46BAC97127BE527700DE8646 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BAC97027BE527700DE8646 /* ViewController.swift */; };
+		46BAC97127BE527700DE8646 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46BAC97027BE527700DE8646 /* MainViewController.swift */; };
 		46BAC97427BE527700DE8646 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46BAC97227BE527700DE8646 /* Main.storyboard */; };
 		46BAC97627BE527A00DE8646 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 46BAC97527BE527A00DE8646 /* Assets.xcassets */; };
 		46BAC97927BE527A00DE8646 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46BAC97727BE527A00DE8646 /* LaunchScreen.storyboard */; };
@@ -44,7 +44,7 @@
 		46BAC96927BE527700DE8646 /* HotelsSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HotelsSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		46BAC96C27BE527700DE8646 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		46BAC96E27BE527700DE8646 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		46BAC97027BE527700DE8646 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		46BAC97027BE527700DE8646 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		46BAC97327BE527700DE8646 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		46BAC97527BE527A00DE8646 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		46BAC97827BE527A00DE8646 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -121,10 +121,9 @@
 		46BAC96B27BE527700DE8646 /* HotelsSwift */ = {
 			isa = PBXGroup;
 			children = (
+				87F3AE6F27D8A09800239C28 /* Screen */,
 				46BAC96C27BE527700DE8646 /* AppDelegate.swift */,
 				46BAC96E27BE527700DE8646 /* SceneDelegate.swift */,
-				46BAC97027BE527700DE8646 /* ViewController.swift */,
-				4675E08C27BEA6460080B063 /* MainTotalCell.swift */,
 				46BAC9A327BE5BEC00DE8646 /* NetworkHotelManager.swift */,
 				46BAC9A827BE5DE100DE8646 /* CurrentHotelsData.swift */,
 				46BAC97227BE527700DE8646 /* Main.storyboard */,
@@ -151,6 +150,23 @@
 				46BAC99027BE527B00DE8646 /* Info.plist */,
 			);
 			path = HotelsSwiftUITests;
+			sourceTree = "<group>";
+		};
+		87F3AE6F27D8A09800239C28 /* Screen */ = {
+			isa = PBXGroup;
+			children = (
+				87F3AE7327D8A1AD00239C28 /* MainScreen */,
+			);
+			path = Screen;
+			sourceTree = "<group>";
+		};
+		87F3AE7327D8A1AD00239C28 /* MainScreen */ = {
+			isa = PBXGroup;
+			children = (
+				46BAC97027BE527700DE8646 /* MainViewController.swift */,
+				4675E08C27BEA6460080B063 /* MainTotalCell.swift */,
+			);
+			path = MainScreen;
 			sourceTree = "<group>";
 		};
 		B28B23E8FD56D915A36C2711 /* Frameworks */ = {
@@ -336,7 +352,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				46BAC9A927BE5DE100DE8646 /* CurrentHotelsData.swift in Sources */,
-				46BAC97127BE527700DE8646 /* ViewController.swift in Sources */,
+				46BAC97127BE527700DE8646 /* MainViewController.swift in Sources */,
 				46BAC9A427BE5BEC00DE8646 /* NetworkHotelManager.swift in Sources */,
 				46BAC96D27BE527700DE8646 /* AppDelegate.swift in Sources */,
 				46BAC96F27BE527700DE8646 /* SceneDelegate.swift in Sources */,
