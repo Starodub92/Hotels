@@ -27,6 +27,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
 
         mainTableView.delegate = self
         mainTableView.dataSource = self
+        mainTableView.rowHeight = 100
         self.view.addSubview(mainTableView)
         mainTableView.translatesAutoresizingMaskIntoConstraints = false
         mainTableView.register(MainTotalCell.self, forCellReuseIdentifier: "MyCell")
@@ -60,6 +61,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
            // cell.imageHotelCell.image = hotel
             cell.nameHotelCell.text = hotel.name
             cell.addressHotelCell.text = hotel.address
+            
+            cell.selectionStyle = .none
+            
         return cell
         
     }
