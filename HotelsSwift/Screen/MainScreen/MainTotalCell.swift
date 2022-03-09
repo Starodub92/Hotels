@@ -6,16 +6,21 @@
 //
 
 import UIKit
+import Cosmos
 
 class MainTotalCell: UITableViewCell {
     
-    var imageHotelCell: UIImageView = UIImageView(frame: .zero)
-    var nameHotelCell : UILabel = UILabel(frame: .zero)
-    var addressHotelCell : UILabel = UILabel(frame: .zero)
-    var backgroundViewStar : UIView = UIView(frame: .zero)
+    var imageHotelCell = UIImageView(frame: .zero)
+    var nameHotelCell = UILabel(frame: .zero)
+    var addressHotelCell = UILabel(frame: .zero)
+    var backgroundViewStar = UIView(frame: .zero)
     
+    var starView: CosmosView = {
+        let view = CosmosView()
+        return view
+    }()
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         imageHotelCell.contentMode = .scaleAspectFill
@@ -29,15 +34,24 @@ class MainTotalCell: UITableViewCell {
         
         addressHotelCell.translatesAutoresizingMaskIntoConstraints = false
         self.contentView.addSubview(addressHotelCell)
-        
+            
+            
         backgroundViewStar.translatesAutoresizingMaskIntoConstraints = false
-        backgroundViewStar.backgroundColor = .green
+        starView.settings.emptyBorderColor = UIColor.black
+        starView.settings.filledColor = UIColor.black
+        starView.settings.updateOnTouch = false
+        self.backgroundViewStar.addSubview(starView)
         self.contentView.addSubview(backgroundViewStar)
         
+
         setupImageHotelCellConstraint()
         setupNameHotelCellConstraint()
         setupAddressHotelCellConstraint()
         setupBackgroundViewStar()
+    }
+    
+    func srarNumber(star: Int) {
+        starView.rating = Double(star)
     }
     
     func setupImageHotelCellConstraint() {

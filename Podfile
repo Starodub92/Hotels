@@ -8,4 +8,6 @@ target 'HotelsSwift' do
  pod 'Alamofire'
   pod 'SwiftyJSON', '~> 4.0'
 
+pod 'Cosmos', '~> 23.0'
+
 end
